@@ -138,8 +138,26 @@
 
                             <p id="construccion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
-                            <p class="fs-6 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                            <p class="fs-6 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
+                            <p class="fs-6 mb-4">La construcción del circuito se llevó a cabo en una protoboard, conectando los diferentes componentes de acuerdo con el diseño propuesto. A continuación, se detallan los pasos seguidos:</p>
+                            <p class="fs-6 mb-4">1. Preparación de los componentes:</p>
+                            <p class="fs-6 mb-4">Se seleccionaron los LEDs, resistencias, el display de 7 segmentos, y los jumpers necesarios.</p>
+                            <p class="fs-6 mb-4">Se verificaron los valores de las resistencias (1kΩ) para asegurar que limitaran correctamente la corriente de los LEDs y el display.</p>
+                            <p class="fs-6 mb-4">2. Montaje del circuito en la protoboard:</p>
+                            <p class="fs-6 mb-4">Primero, se colocaron los LEDs en la protoboard, asegurándose de conectar las patas positivas (ánodos) a pines digitales del Arduino (pines 9, 10 y 11) mediante cables de conexión (jumpers).</p>
+                            <p class="fs-6 mb-4">Las patas negativas (cátodos) de los LEDs se conectaron a las resistencias de 1kΩ, y luego se dirigieron al GND del Arduino para completar el circuito.</p>
+                            <p class="fs-6 mb-4">Posteriormente, se montó el display de 7 segmentos en la protoboard. Cada uno de los pines del display se conectó a un pin digital del Arduino mediante jumpers, intercalando resistencias para proteger los segmentos.</p>
+                            <p class="fs-6 mb-4">3. Conexión del Arduino a la protoboard:</p>
+                            <p class="fs-6 mb-4">Se utilizó el puerto USB para alimentar el Arduino y transferir el código desde el ordenador.</p>
+                            <p class="fs-6 mb-4">Se conectó el pin GND del Arduino a la línea de tierra de la protoboard para asegurar una referencia común en todo el circuito.</p>
+                            <p class="fs-6 mb-4">4. Carga del código</p>
+                            <p class="fs-6 mb-4">Después de montar todo el hardware, se escribió el código en el entorno de Arduino IDE, incluyendo el control de las salidas digitales para encender y apagar los LEDs y manejar el display.</p>
+                            <p class="fs-6 mb-4">El código se cargó a la placa Arduino a través del puerto USB.</p>
+                            <p class="fs-6 mb-4">5. Pruebas y ajustes:</p>
+                            <p class="fs-6 mb-4">Una vez cargado el código, se realizaron pruebas para verificar que los LEDs se encendían y apagaban correctamente, y que el display de 7 segmentos mostraba los números programados.</p>
+                            <p class="fs-6 mb-4">Se ajustaron pequeños detalles en las conexiones y el código según fue necesario para obtener el comportamiento deseado.</p>
+                            <p class="fs-6 mb-4">Este proceso de construcción permitió ensamblar el circuito de manera correcta, garantizando el control de las salidas digitales a través de la programación en Arduino.</p>
+                            
+                            
                             
 
                         <p id="resultados">
