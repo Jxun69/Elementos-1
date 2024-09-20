@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Práctica 1 | Ibero Puebla</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container px-5">
+                    <a class="navbar-brand">Menú</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="../">Home</a></li>                    
+                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Seccion TITULO de Portafolio-->
+            <header class="bg-primary py-2 mt-6">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Lab. Elementos Programables</h1>
+                                <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seccion TITULO de la Práctica-->
+            <section class="py-3" id="scroll-target">
+                <div class="container px-5 my-2">
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Salidas Digitales</h1>
+
+                        <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
+                            <img class="img-fluid rounded-circle" width="50px" src="assets/Carlos.jpg" alt="..." />
+                            <div class="ms-2">
+                                <div class="fw-bold">Juan Carlos Lozano Torres</div>
+                                <div class="text-muted">Ingeniería Biomédica</div>
+                            </div>
+                        <!--Aqui termina etiqueta de alumno-->
+
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Septiembre 19, 2024</div>
+                        <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
+                        <a class="badge bg-primary text-decoration-none link-light" >Arduino</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Electrónica</a>
+
+                    </header>
+                </div>
+            </section>
+
+            <!-- Seccion de CONTENIDO de la Práctica-->
+            <section>
+                <div class="container px-5">
+
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/progra.jpg" alt="..." /></figure>
+                                
+                    <p id="resumen">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
+                        <p class="fs-6 mb-4">Arduino es una plataforma de código abierto basada en hardware y software fáciles de usar. Se utiliza para desarrollar proyectos electrónicos interactivos. El microcontrolador en la placa Arduino se puede programar para controlar dispositivos como LEDs, servomotores, sensores y displays. Usando el lenguaje de programación Arduino (similar a C/C++), se crean programas ("sketches") que se cargan en la placa a través de un puerto USB. Es ideal para prototipos y proyectos de automatización. </p>
+                        <p class="fs-6 mb-4">Arduino es útil porque facilita el aprendizaje de conceptos de electrónica, programación y automatización, áreas clave en muchas ingenierías, como la biomédica. Permite crear prototipos de manera rápida y económica, desarrollar habilidades prácticas en control de dispositivos, e incluso diseñar proyectos complejos, como sistemas de monitoreo o automatización médica. Es una herramienta versátil para explorar ideas innovadoras y aplicar teoría en la práctica.</p>
+                        
+                        <p id="intro">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
+                        <p class="fs-6 mb-4">En esta práctica exploraremos el control de salidas digitales utilizando una placa Arduino. Las salidas digitales permiten enviar señales de encendido y apagado (valores HIGH y LOW) a distintos dispositivos electrónicos, como LEDs y displays de 7 segmentos. Utilizando componentes básicos, como resistencias, LEDs y un display de 7 segmentos, se realizarán ejercicios para comprender cómo controlar estos dispositivos mediante código. Además, se implementarán retardos (delays) para regular el encendido y apagado de los LEDs, permitiendo visualizar el comportamiento de las señales digitales en tiempo real. Esta práctica proporciona una base fundamental para proyectos más complejos que involucren el control de dispositivos externos mediante Arduino.</p>
+                        
+                        
+                        <p id="materiales">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
+                        <p class="fs-6 mb-4">Arduino UNO</p>
+                        <p class="fs-6 mb-4">LEDs</p>
+                        <p class="fs-6 mb-4">Display 7 segmentos (catodo) </p>
+                        <p class="fs-6 mb-4">Protoboard</p>
+                        <p class="fs-6 mb-4">Resistencias de 1K</p>
+                        <p class="fs-6 mb-4">Jumpers</p>
+                        <p class="fs-6 mb-4">Servomotores</p>    
+                        
+                        <p id="desarrollo">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
+                        <p class="fs-6 mb-4">En esta practica se usaron simuladores de tinkercad proporcionados por el profesor Huber Giron Nieto para ser recreados fisicamente.</p>
+                        <p class="fs-6 mb-4">Salidas digitales.</p> 
+                        <p class="fs-6 mb-4">Empezamos encendiendo los LEDs que ya están implementados en el Arduino otorgandole delays para que el LED encienda y apague cada segundo.</p>
+                        <p class="fs-6 mb-4">Se conecto un LED directamente en el arduino para encenderlo a la par del que ya tiene la placa. </p>
+                        <p class="fs-6 mb-4">En el siguiente codigo se conecto el LED directamente a la protoboard para encenderlo; se coencto una resistecnia para evitar quemar el LED</p>
+                        <p class="fs-6 mb-4">Para la quinta recreación se deben encender 2 LEDs uno si y uno no, imitando un estrobo.</p>
+                        <p class="fs-6 mb-4">Se cambia el uso de LEDs a un display de 7 segmentos buscando encender el pin g y p del mismo.</p>  
+                        <p class="fs-6 mb-4">Por ultimo se uso el display encendiendolo para formar numeros empezando en el 0 y terminando en el 4</p> 
+                        <p class="fs-6 mb-4">Todas estas recreaciones muestra el funcionamiento de las salidas digitales usando Arduino.</p>
+                        <p class="fs-6 mb-4"></p>  
+
+                            <p id="simulacion">
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
+                            <p class="fs-6 mb-4">Las simulaciones recreadas son las siguientes:</p>
+                            <p class="fs-6 mb-4"></p>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Simu1.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Simu2.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Simu3.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Simu4.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Simu5.jpg" alt="..." /></figure>
+
+                            <p id="diseño">
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
+                            <p class="fs-6 mb-4">En esta sección se detalla la disposición de los componentes y las conexiones necesarias para implementar las salidas digitales utilizando la placa Arduino. El diseño se basa en los siguientes elementos.</p>
+                            <p class="fs-6 mb-4">Conexiones de los LEDs:</p> 
+                            <p class="fs-6 mb-4">Cada LED estará conectado a un pin digital de salida en el Arduino (por ejemplo, pines 9, 10 y 11).</p>    
+                            <p class="fs-6 mb-4">Se incluirán resistencias en serie con cada LED para limitar la corriente y proteger los componentes.</p>    
+                            <p class="fs-6 mb-4">Conexión del display de 7 segmentos:</p>    
+                            <p class="fs-6 mb-4">El display estará conectado a varios pines digitales del Arduino, con las resistencias correspondientes para cada segmento.</p>     
+                            <p class="fs-6 mb-4">Los pines digitales del Arduino controlarán cada segmento del display, permitiendo formar números.</p>  
+                            <p class="fs-6 mb-4">Diagrama de conexiones:</p>  
+                            <p class="fs-6 mb-4">El diagrama incluye la disposición de los LEDs y el display de 7 segmentos en la protoboard, con sus correspondientes resistencias y cables de conexión hacia el Arduino.</p>  
+                            <p class="fs-6 mb-4">Se detallará qué pines digitales del Arduino están asignados a cada componente.</p>  
+                            <p class="fs-6 mb-4">Código de control:</p>  
+                            <p class="fs-6 mb-4">El código estará diseñado para encender y apagar los LEDs de manera secuencial, utilizando delays para visualizar los cambios.</p> 
+                            <p class="fs-6 mb-4">En el caso del display de 7 segmentos, se programarán diferentes patrones de encendido para representar números.</p> 
+                            <p class="fs-6 mb-4">Este diseño tiene como objetivo proporcionar una comprensión clara de cómo se manejan las salidas digitales con Arduino y cómo se integran múltiples componentes de manera efectiva.</p>    
+
+                            <p id="construccion">
+                            <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
+                            <p class="fs-6 mb-4">La construcción del circuito se llevó a cabo en una protoboard, conectando los diferentes componentes de acuerdo con el diseño propuesto. A continuación, se detallan los pasos seguidos:</p>
+                            <p class="fs-6 mb-4">1. Preparación de los componentes:</p>
+                            <p class="fs-6 mb-4">Se seleccionaron los LEDs, resistencias, el display de 7 segmentos, y los jumpers necesarios.</p>
+                            <p class="fs-6 mb-4">Se verificaron los valores de las resistencias (1kΩ) para asegurar que limitaran correctamente la corriente de los LEDs y el display.</p>
+                            <p class="fs-6 mb-4">2. Montaje del circuito en la protoboard:</p>
+                            <p class="fs-6 mb-4">Primero, se colocaron los LEDs en la protoboard, asegurándose de conectar las patas positivas (ánodos) a pines digitales del Arduino (pines 9, 10 y 11) mediante cables de conexión (jumpers).</p>
+                            <p class="fs-6 mb-4">Las patas negativas (cátodos) de los LEDs se conectaron a las resistencias de 1kΩ, y luego se dirigieron al GND del Arduino para completar el circuito.</p>
+                            <p class="fs-6 mb-4">Posteriormente, se montó el display de 7 segmentos en la protoboard. Cada uno de los pines del display se conectó a un pin digital del Arduino mediante jumpers, intercalando resistencias para proteger los segmentos.</p>
+                            <p class="fs-6 mb-4">3. Conexión del Arduino a la protoboard:</p>
+                            <p class="fs-6 mb-4">Se utilizó el puerto USB para alimentar el Arduino y transferir el código desde el ordenador.</p>
+                            <p class="fs-6 mb-4">Se conectó el pin GND del Arduino a la línea de tierra de la protoboard para asegurar una referencia común en todo el circuito.</p>
+                            <p class="fs-6 mb-4">4. Carga del código</p>
+                            <p class="fs-6 mb-4">Después de montar todo el hardware, se escribió el código en el entorno de Arduino IDE, incluyendo el control de las salidas digitales para encender y apagar los LEDs y manejar el display.</p>
+                            <p class="fs-6 mb-4">El código se cargó a la placa Arduino a través del puerto USB.</p>
+                            <p class="fs-6 mb-4">5. Pruebas y ajustes:</p>
+                            <p class="fs-6 mb-4">Una vez cargado el código, se realizaron pruebas para verificar que los LEDs se encendían y apagaban correctamente, y que el display de 7 segmentos mostraba los números programados.</p>
+                            <p class="fs-6 mb-4">Se ajustaron pequeños detalles en las conexiones y el código según fue necesario para obtener el comportamiento deseado.</p>
+                            <p class="fs-6 mb-4">Este proceso de construcción permitió ensamblar el circuito de manera correcta, garantizando el control de las salidas digitales a través de la programación en Arduino.</p>
+                            
+                            
+                            
+
+                        <p id="resultados">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        <p class="fs-6 mb-4">Los resultados obtenidos se muestran a continuación</p>
+                        <p class="fs-6 mb-4"></p>
+                        <p class="fs-6 mb-4"></p>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid1.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid2.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid3.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid4.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid5.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid6.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid7.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid8.mp4" type="video/mp4">
+                        </video></p></figure>
+                        <figure class="mb-4" align="center"><video width="80%"  controls>
+                            <source src="video/vid9.mp4" type="video/mp4">
+                        </video></p></figure>
+
+
+                        <p id="conclusiones">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
+                        <p class="fs-6 mb-4">A través de esta práctica, se lograron implementar y controlar salidas digitales con Arduino de manera efectiva. La interacción con componentes como LEDs y displays de 7 segmentos permitió comprender cómo el microcontrolador puede enviar señales binarias (HIGH/LOW) para controlar dispositivos externos. El uso de delays permitió visualizar de manera clara el comportamiento de las señales digitales en tiempo real. Además, la experiencia práctica de ensamblar el circuito y cargar el código proporcionó una base sólida para proyectos más complejos de automatización y control. Esta práctica demostró la versatilidad de Arduino como herramienta educativa y de prototipado, además de desarrollar habilidades esenciales en la construcción de circuitos y programación. Se cumplieron los objetivos establecidos, y los resultados obtenidos sientan las bases para avanzar en proyectos más ambiciosos que involucren sensores, motores y otros dispositivos de entrada/salida.</p>
+                      
+
+                        <p id="referencias">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
+                        <p class="fs-6 mb-4">Microchip AVR® microcontroller primer: programming and interfacing, third edition (synthesis lectures on digital circuits and systems), BARRETT, Steven F. Pack Daniel J., Editorial Morgan & Claypool, 2019.</p>
+                        <p class="fs-6 mb-4">K. He, X. Zhang, S. Ren and J. Sun, "Deep Residual Learning for Image Recognition," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 770-778, doi: 10.1109/CVPR.2016.90.</p>
+                        <p class="fs-6 mb-4">J. D. Hunter, "Matplotlib: A 2D Graphics Environment," in Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, May-June 2007, doi: 10.1109/MCSE.2007.55.</p>
+                        
+                        <p id="descargables">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
+                        <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a> </p>
+                        <p class="fs-6 mb-4">Descargar codigo Arduino: <a href="files/Ejemplo_arduino_bluetooth.ino">codigo.ino</a> </p>
+                        <p class="fs-6 mb-4">Descargar Archivo 3d .STL: <a href="files/Pieza_3D.STL">pieza.stl</a> </p>
+
+                </div>
+            </section>
+
+            
+        </main>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
