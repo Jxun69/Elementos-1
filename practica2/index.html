@@ -78,12 +78,12 @@
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">Arduino es una plataforma de código abierto basada en hardware y software fáciles de usar. Se utiliza para desarrollar proyectos electrónicos interactivos. El microcontrolador en la placa Arduino se puede programar para controlar dispositivos como LEDs, servomotores, sensores y displays. Usando el lenguaje de programación Arduino (similar a C/C++), se crean programas ("sketches") que se cargan en la placa a través de un puerto USB. Es ideal para prototipos y proyectos de automatización. </p>
-                        <p class="fs-6 mb-4">Arduino es útil porque facilita el aprendizaje de conceptos de electrónica, programación y automatización, áreas clave en muchas ingenierías, como la biomédica. Permite crear prototipos de manera rápida y económica, desarrollar habilidades prácticas en control de dispositivos, e incluso diseñar proyectos complejos, como sistemas de monitoreo o automatización médica. Es una herramienta versátil para explorar ideas innovadoras y aplicar teoría en la práctica.</p>
-                        
+                        <p class="fs-6 mb-4">En esta práctica se aprendió a utilizar las entradas digitales de Arduino para leer el estado de dispositivos como botones y sensores. Se implementaron circuitos simples donde un botón enviaba señales digitales (HIGH o LOW) a la placa Arduino, permitiendo que se ejecutaran acciones basadas en el estado del botón. Esto proporciona una base sólida para entender cómo Arduino puede interactuar con el entorno y tomar decisiones en proyectos más avanzados, como sistemas de control o automatización.</p>
+                       
+
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">En esta práctica exploraremos el control de salidas digitales utilizando una placa Arduino. Las salidas digitales permiten enviar señales de encendido y apagado (valores HIGH y LOW) a distintos dispositivos electrónicos, como LEDs y displays de 7 segmentos. Utilizando componentes básicos, como resistencias, LEDs y un display de 7 segmentos, se realizarán ejercicios para comprender cómo controlar estos dispositivos mediante código. Además, se implementarán retardos (delays) para regular el encendido y apagado de los LEDs, permitiendo visualizar el comportamiento de las señales digitales en tiempo real. Esta práctica proporciona una base fundamental para proyectos más complejos que involucren el control de dispositivos externos mediante Arduino.</p>
+                        <p class="fs-6 mb-4">En esta práctica, se explorará el uso de entradas digitales en Arduino para leer el estado de dispositivos como botones y sensores. Las entradas digitales permiten detectar si un dispositivo está en uno de dos estados: activado o desactivado (HIGH o LOW). Mediante la conexión de botones, se podrá captar cuando se pulsa o suelta un interruptor, permitiendo a Arduino ejecutar acciones en función de la información recibida. Este concepto es fundamental para crear interactividad en proyectos electrónicos, ya que permite responder a estímulos del entorno. La práctica servirá como introducción para proyectos más avanzados que requieren la lectura de señales digitales y la toma de decisiones basadas en dichas entradas.</p>
                         
                         
                         <p id="materiales">
@@ -94,21 +94,28 @@
                         <p class="fs-6 mb-4">Protoboard</p>
                         <p class="fs-6 mb-4">Resistencias de 1K</p>
                         <p class="fs-6 mb-4">Jumpers</p>
-                        <p class="fs-6 mb-4">Servomotores</p>    
+                        <p class="fs-6 mb-4">Servomotores</p> 
+                        <p class="fs-6 mb-4">botones</p>   
                         
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                        <p class="fs-6 mb-4">En esta practica se usaron simuladores de tinkercad proporcionados por el profesor Huber Giron Nieto para ser recreados fisicamente.</p>
-                        <p class="fs-6 mb-4">Salidas digitales.</p> 
-                        <p class="fs-6 mb-4">Empezamos encendiendo los LEDs que ya están implementados en el Arduino otorgandole delays para que el LED encienda y apague cada segundo.</p>
-                        <p class="fs-6 mb-4">Se conecto un LED directamente en el arduino para encenderlo a la par del que ya tiene la placa. </p>
-                        <p class="fs-6 mb-4">En el siguiente codigo se conecto el LED directamente a la protoboard para encenderlo; se coencto una resistecnia para evitar quemar el LED</p>
-                        <p class="fs-6 mb-4">Para la quinta recreación se deben encender 2 LEDs uno si y uno no, imitando un estrobo.</p>
-                        <p class="fs-6 mb-4">Se cambia el uso de LEDs a un display de 7 segmentos buscando encender el pin g y p del mismo.</p>  
-                        <p class="fs-6 mb-4">Por ultimo se uso el display encendiendolo para formar numeros empezando en el 0 y terminando en el 4</p> 
-                        <p class="fs-6 mb-4">Todas estas recreaciones muestra el funcionamiento de las salidas digitales usando Arduino.</p>
-                        <p class="fs-6 mb-4"></p>  
+                        <p class="fs-6 mb-4">1. Preparación de los componentes:</p>
+                        <p class="fs-6 mb-4">Se seleccionaron los componentes necesarios: un Arduino Uno, un botón pulsador, una resistencia de 1kΩ (pull-down), jumpers y una protoboard.</p> 
+                        <p class="fs-6 mb-4">2. Montaje del circuito:</p>
+                        <p class="fs-6 mb-4">El botón pulsador se conectó a un pin digital del Arduino (por ejemplo, el pin 2).</p>
+                        <p class="fs-6 mb-4">Se utilizó una resistencia de 1kΩ como pull-down, conectada entre el pin digital y tierra (GND), para asegurar que el pin tenga un valor bajo (LOW) cuando el botón no está presionado.</p>
+                        <p class="fs-6 mb-4">El otro terminal del botón se conectó a 5V para que, al ser presionado, el pin digital reciba un valor alto (HIGH).</p>
+                        <p class="fs-6 mb-4">3. Código de programación:</p>  
+                        <p class="fs-6 mb-4">Se escribió un código en el entorno de Arduino IDE para leer el estado del botón y ejecutar una acción dependiendo de si el botón estaba presionado o no. El código utilizó la función digitalRead() para obtener el valor del pin.</p> 
+                        <p class="fs-6 mb-4">Cuando el botón era presionado, se encendía un LED conectado a otro pin digital del Arduino. Cuando el botón se soltaba, el LED se apagaba.</p>  
+                        <p class="fs-6 mb-4">Se empleó un if-else en el código para evaluar si el pin estaba en estado HIGH o LOW y, en función de eso, encender o apagar el LED.</p> 
+                        <p class="fs-6 mb-4">4. Pruebas y ajustes:</p> 
+                        <p class="fs-6 mb-4">Tras cargar el código en la placa Arduino, se realizaron pruebas para verificar que el LED respondía correctamente a la pulsación del botón.</p>
+                        <p class="fs-6 mb-4">Se verificó la estabilidad del circuito, comprobando que la resistencia pull-down evitaba lecturas erráticas cuando el botón no estaba presionado.</p>
+                        <p class="fs-6 mb-4"></p>
 
+                         
+                        
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
                             <p class="fs-6 mb-4">Las simulaciones recreadas son las siguientes:</p>
@@ -123,42 +130,48 @@
 
                             <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
-                            <p class="fs-6 mb-4">En esta sección se detalla la disposición de los componentes y las conexiones necesarias para implementar las salidas digitales utilizando la placa Arduino. El diseño se basa en los siguientes elementos.</p>
-                            <p class="fs-6 mb-4">Conexiones de los LEDs:</p> 
-                            <p class="fs-6 mb-4">Cada LED estará conectado a un pin digital de salida en el Arduino (por ejemplo, pines 9, 10 y 11).</p>    
-                            <p class="fs-6 mb-4">Se incluirán resistencias en serie con cada LED para limitar la corriente y proteger los componentes.</p>    
-                            <p class="fs-6 mb-4">Conexión del display de 7 segmentos:</p>    
-                            <p class="fs-6 mb-4">El display estará conectado a varios pines digitales del Arduino, con las resistencias correspondientes para cada segmento.</p>     
-                            <p class="fs-6 mb-4">Los pines digitales del Arduino controlarán cada segmento del display, permitiendo formar números.</p>  
-                            <p class="fs-6 mb-4">Diagrama de conexiones:</p>  
-                            <p class="fs-6 mb-4">El diagrama incluye la disposición de los LEDs y el display de 7 segmentos en la protoboard, con sus correspondientes resistencias y cables de conexión hacia el Arduino.</p>  
-                            <p class="fs-6 mb-4">Se detallará qué pines digitales del Arduino están asignados a cada componente.</p>  
-                            <p class="fs-6 mb-4">Código de control:</p>  
-                            <p class="fs-6 mb-4">El código estará diseñado para encender y apagar los LEDs de manera secuencial, utilizando delays para visualizar los cambios.</p> 
-                            <p class="fs-6 mb-4">En el caso del display de 7 segmentos, se programarán diferentes patrones de encendido para representar números.</p> 
-                            <p class="fs-6 mb-4">Este diseño tiene como objetivo proporcionar una comprensión clara de cómo se manejan las salidas digitales con Arduino y cómo se integran múltiples componentes de manera efectiva.</p>    
+                            <p class="fs-6 mb-4">El diseño del circuito se basa en la lectura de señales digitales a través de un botón pulsador, utilizando un esquema sencillo que asegura una lectura estable y confiable. A continuación, se describe la disposición de los componentes:</p>
+                            <p class="fs-6 mb-4">1. Conexiones del botón pulsador:</p>
+                            <p class="fs-6 mb-4">Uno de los terminales del botón está conectado al pin digital 2 del Arduino, configurado como entrada.</p>
+                            <p class="fs-6 mb-4">El otro terminal del botón se conecta a la línea de 5V de la placa Arduino.</p>
+                            <p class="fs-6 mb-4">Una resistencia de 10kΩ se conecta entre el pin digital 2 y GND para funcionar como resistencia pull-down. Esto asegura que el pin se mantenga en estado LOW cuando el botón no está siendo presionado, evitando lecturas erráticas o flotantes.</p>
+                            <p class="fs-6 mb-4">2. Conexiones del LED:</p>
+                            <p class="fs-6 mb-4">El LED se conecta al pin digital 13 del Arduino, configurado como salida.</p>
+                            <p class="fs-6 mb-4">Se incluye una resistencia de 1kΩ en serie con el LED para limitar la corriente y proteger el componente.</p>
+                            <p class="fs-6 mb-4">3. Funcionamiento del circuito:</p>
+                            <p class="fs-6 mb-4">Cuando se presiona el botón, el pin 2 del Arduino recibe una señal HIGH (5V), lo que activa el código que enciende el LED.</p>
+                            <p class="fs-6 mb-4">Cuando el botón no está presionado, el pin 2 se mantiene en LOW gracias a la resistencia pull-down, lo que apaga el LED.</p>
+                            <p class="fs-6 mb-4">4. Diagrama del circuito:</p>
+                            <p class="fs-6 mb-4">En el diseño del circuito, se puede visualizar la conexión del botón pulsador con el pin de entrada digital, la resistencia pull-down hacia tierra y el LED conectado a un pin de salida digital. El diagrama proporciona una visión clara de cómo se interconectan los componentes en la protoboard.</p>
+                            <p class="fs-6 mb-4">Este diseño básico permite un control sencillo de entradas digitales y se puede ampliar para manejar múltiples botones o sensores en proyectos futuros.</p>
+                            <p class="fs-6 mb-4">Posteriormente se vuelve a hacer lo mismo pero agregando un segundo LED y botón para practicar con más de una entrada.</p>
+                            <p class="fs-6 mb-4"></p>
+
 
                             <p id="construccion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
-                            <p class="fs-6 mb-4">La construcción del circuito se llevó a cabo en una protoboard, conectando los diferentes componentes de acuerdo con el diseño propuesto. A continuación, se detallan los pasos seguidos:</p>
+                            <p class="fs-6 mb-4">La construcción del circuito se llevó a cabo siguiendo los pasos del diseño propuesto, utilizando una protoboard para montar los componentes y un Arduino Uno para gestionar las entradas y salidas digitales. A continuación, se detallan los pasos seguidos:</p>
                             <p class="fs-6 mb-4">1. Preparación de los componentes:</p>
-                            <p class="fs-6 mb-4">Se seleccionaron los LEDs, resistencias, el display de 7 segmentos, y los jumpers necesarios.</p>
-                            <p class="fs-6 mb-4">Se verificaron los valores de las resistencias (1kΩ) para asegurar que limitaran correctamente la corriente de los LEDs y el display.</p>
+                            <p class="fs-6 mb-4">Se seleccionaron los componentes necesarios: dos botones pulsadores, dos LEDs, dos resistencias de 10kΩ (para pull-down), dos resistencias de 1KΩ (para limitar la corriente de los LEDs), y jumpers para las conexiones.</p>
                             <p class="fs-6 mb-4">2. Montaje del circuito en la protoboard:</p>
-                            <p class="fs-6 mb-4">Primero, se colocaron los LEDs en la protoboard, asegurándose de conectar las patas positivas (ánodos) a pines digitales del Arduino (pines 9, 10 y 11) mediante cables de conexión (jumpers).</p>
-                            <p class="fs-6 mb-4">Las patas negativas (cátodos) de los LEDs se conectaron a las resistencias de 1kΩ, y luego se dirigieron al GND del Arduino para completar el circuito.</p>
-                            <p class="fs-6 mb-4">Posteriormente, se montó el display de 7 segmentos en la protoboard. Cada uno de los pines del display se conectó a un pin digital del Arduino mediante jumpers, intercalando resistencias para proteger los segmentos.</p>
+                            <p class="fs-6 mb-4">Botones:</p>
+                            <p class="fs-6 mb-4">El primer botón se conectó al pin digital 2 del Arduino y su otro terminal a la línea de 5V de la placa.</p>
+                            <p class="fs-6 mb-4">El segundo botón se conectó de manera similar, pero al pin digital 3 del Arduino.</p>
+                            <p class="fs-6 mb-4">Ambas conexiones incluyeron una resistencia de 10kΩ entre los pines 2 y 3 y GND para funcionar como resistencias pull-down, asegurando que los pines se mantengan en LOW cuando los botones no estén presionados.</p>
+                            <p class="fs-6 mb-4">LEDs:</p>
+                            <p class="fs-6 mb-4">El primer LED se conectó al pin digital 13 del Arduino con una resistencia de 1KΩ en serie, conectando su cátodo a GND.</p>
+                            <p class="fs-6 mb-4">El segundo LED se conectó al pin digital 12 con una resistencia similar en serie y también su cátodo a GND.</p>
                             <p class="fs-6 mb-4">3. Conexión del Arduino a la protoboard:</p>
-                            <p class="fs-6 mb-4">Se utilizó el puerto USB para alimentar el Arduino y transferir el código desde el ordenador.</p>
-                            <p class="fs-6 mb-4">Se conectó el pin GND del Arduino a la línea de tierra de la protoboard para asegurar una referencia común en todo el circuito.</p>
-                            <p class="fs-6 mb-4">4. Carga del código</p>
-                            <p class="fs-6 mb-4">Después de montar todo el hardware, se escribió el código en el entorno de Arduino IDE, incluyendo el control de las salidas digitales para encender y apagar los LEDs y manejar el display.</p>
+                            <p class="fs-6 mb-4">Se conectó el pin GND del Arduino a la línea de tierra de la protoboard para asegurar una referencia común.</p>
+                            <p class="fs-6 mb-4">La alimentación de 5V del Arduino se conectó a la línea de positivo de la protoboard para los botones.</p>
+                            <p class="fs-6 mb-4">4. Carga del código:</p>
+                            <p class="fs-6 mb-4">Se escribió un código en el entorno Arduino IDE que leyera los estados de los pines 2 y 3 (entradas digitales) y, en función de si estaban en HIGH o LOW, encendiera o apagara los LEDs correspondientes conectados a los pines 13 y 12.</p>
                             <p class="fs-6 mb-4">El código se cargó a la placa Arduino a través del puerto USB.</p>
                             <p class="fs-6 mb-4">5. Pruebas y ajustes:</p>
-                            <p class="fs-6 mb-4">Una vez cargado el código, se realizaron pruebas para verificar que los LEDs se encendían y apagaban correctamente, y que el display de 7 segmentos mostraba los números programados.</p>
-                            <p class="fs-6 mb-4">Se ajustaron pequeños detalles en las conexiones y el código según fue necesario para obtener el comportamiento deseado.</p>
-                            <p class="fs-6 mb-4">Este proceso de construcción permitió ensamblar el circuito de manera correcta, garantizando el control de las salidas digitales a través de la programación en Arduino.</p>
-                            
+                            <p class="fs-6 mb-4">Tras cargar el código, se realizaron pruebas para asegurarse de que el LED correspondiente se encendiera al presionar su botón asociado y se apagara cuando se soltara.</p>
+                            <p class="fs-6 mb-4">Se verificó la funcionalidad de ambos botones y LEDs de manera independiente, ajustando las conexiones o el código en caso necesario para garantizar un funcionamiento correcto.</p>
+                            <p class="fs-6 mb-4">Este montaje del circuito y su construcción permitieron interactuar con múltiples entradas digitales y gestionar salidas de manera independiente, sentando las bases para proyectos más complejos de control y automatización.</p>
+                            <p class="fs-6 mb-4"></p>
                             
                             
 
@@ -193,21 +206,19 @@
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">A través de esta práctica, se lograron implementar y controlar salidas digitales con Arduino de manera efectiva. La interacción con componentes como LEDs y displays de 7 segmentos permitió comprender cómo el microcontrolador puede enviar señales binarias (HIGH/LOW) para controlar dispositivos externos. El uso de delays permitió visualizar de manera clara el comportamiento de las señales digitales en tiempo real. Además, la experiencia práctica de ensamblar el circuito y cargar el código proporcionó una base sólida para proyectos más complejos de automatización y control. Esta práctica demostró la versatilidad de Arduino como herramienta educativa y de prototipado, además de desarrollar habilidades esenciales en la construcción de circuitos y programación. Se cumplieron los objetivos establecidos, y los resultados obtenidos sientan las bases para avanzar en proyectos más ambiciosos que involucren sensores, motores y otros dispositivos de entrada/salida.</p>
+                        <p class="fs-6 mb-4">A lo largo de esta práctica, se logró implementar correctamente un circuito de entradas digitales que permitía controlar de forma independiente dos LEDs a través de dos botones pulsadores. La experiencia proporcionó un entendimiento claro de cómo Arduino puede leer señales digitales y responder en tiempo real a estas entradas.</p>
+                        <p class="fs-6 mb-4">Además, la utilización de resistencias pull-down demostró ser clave para estabilizar las lecturas de los botones y evitar señales erráticas. Esta práctica sentó una base sólida en el manejo de entradas y salidas digitales, lo que es esencial para proyectos más avanzados que involucren la interacción con el entorno.</p>
+                        <p class="fs-6 mb-4">En conclusión, los objetivos planteados fueron alcanzados, y el sistema construido funcionó de acuerdo con lo esperado. La comprensión de las entradas digitales abre las puertas a la creación de sistemas de control más complejos, como la integración de sensores y otros dispositivos que interactúen con el mundo físico. </p>
                       
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Microchip AVR® microcontroller primer: programming and interfacing, third edition (synthesis lectures on digital circuits and systems), BARRETT, Steven F. Pack Daniel J., Editorial Morgan & Claypool, 2019.</p>
-                        <p class="fs-6 mb-4">K. He, X. Zhang, S. Ren and J. Sun, "Deep Residual Learning for Image Recognition," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 770-778, doi: 10.1109/CVPR.2016.90.</p>
-                        <p class="fs-6 mb-4">J. D. Hunter, "Matplotlib: A 2D Graphics Environment," in Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, May-June 2007, doi: 10.1109/MCSE.2007.55.</p>
+                        <p class="fs-6 mb-4">[1] Arduino.cc, "Arduino Uno Rev3," Arduino Documentation, [Online]. Available: https://store.arduino.cc/products/arduino-uno-rev3. [Accessed: 19-Sep-2024].</p>
+                        <p class="fs-6 mb-4">[2] M. Banzi and M. Shiloh, Getting Started with Arduino, 3rd ed. Sebastopol, CA: O'Reilly Media, 2014.</p>
+                        <p class="fs-6 mb-4">[3] J. Boxall, Arduino Workshop: A Hands-On Introduction with 65 Projects, 1st ed. San Francisco, CA: No Starch Press, 2013.</p>
                         
                         <p id="descargables">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a> </p>
-                        <p class="fs-6 mb-4">Descargar codigo Arduino: <a href="files/Ejemplo_arduino_bluetooth.ino">codigo.ino</a> </p>
-                        <p class="fs-6 mb-4">Descargar Archivo 3d .STL: <a href="files/Pieza_3D.STL">pieza.stl</a> </p>
-
+          
                 </div>
             </section>
 
