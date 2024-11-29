@@ -80,17 +80,16 @@
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">El ATtiny85, a pesar de sus recursos limitados, es capaz de manejar displays OLED gracias a su compatibilidad con protocolos de comunicación como I2C y SPI. Los displays OLED son pantallas compactas y eficientes, ideales para mostrar texto, gráficos básicos o indicadores en proyectos electrónicos. En el caso del ATtiny85, los pines PB0 y PB2 suelen configurarse como líneas SDA y SCL para la comunicación I2C con el display.</p>
-                        <p class="fs-6 mb-4">Para implementar esta funcionalidad, es esencial optimizar el uso de memoria, dado que el ATtiny85 cuenta con 8 KB de memoria flash y 512 bytes de RAM. Se utilizan librerías livianas como TinyWireM (para I2C) y adaptaciones de U8g2 específicas para microcontroladores pequeños. Estas librerías permiten enviar comandos y datos al display OLED, asegurando un rendimiento fluido en aplicaciones que requieren bajo consumo de energía y espacio reducido.</p>
-                        <p class="fs-6 mb-4">El uso de displays OLED con el ATtiny85 es ideal para proyectos compactos, como relojes, indicadores de sensores o interfaces minimalistas, destacando la capacidad del microcontrolador para manejar salidas gráficas simples.</p>
-                        <p class="fs-6 mb-4"></p>
+                        <p class="fs-6 mb-4">El ATtinny85 es muy practico y funcional a pesar de sus restricciones debido a su tamaño, sin embargo con unos cuantos dispositivos es capaz de hacer funcionar motores, conectores Bluetooth y displays OLED</p>
+                        <p class="fs-6 mb-4">Este proyecto final es la agrupacion de todo lo visto en la materia de Elementos programables y su laboratrio, al usar un ATtinny85 para mover via Bluetooth un auto de 5cm x 5cm x 5cm</p>
                         
+                        
+
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">Los displays OLED (diodos orgánicos emisores de luz) han ganado popularidad en aplicaciones electrónicas debido a su bajo consumo de energía, alta resolución y capacidad para mostrar gráficos y texto en proyectos compactos. El microcontrolador ATtiny85, aunque de tamaño reducido y con recursos limitados, ofrece la capacidad de interactuar con estos displays mediante interfaces de comunicación como I2C y SPI. Gracias a su bajo consumo de energía y a la versatilidad en la programación, el ATtiny85 es ideal para aplicaciones que requieren pantallas de visualización eficientes, como en dispositivos portátiles, sensores y relojes digitales.</p>
-                        <p class="fs-6 mb-4">Este reporte analiza cómo se puede utilizar un display OLED con el ATtiny85, destacando las librerías adecuadas, las conexiones necesarias y las optimizaciones para lograr una comunicación eficiente, aprovechando al máximo los recursos del microcontrolador en proyectos donde el espacio y la energía son limitados.</p>
-                        <p class="fs-6 mb-4"></p>
-                        <p class="fs-6 mb-4"></p>
+                        <p class="fs-6 mb-4">El avance de la tecnología ha permitido que dispositivos electrónicos pequeños, como el ATtiny85, se utilicen para proyectos innovadores y creativos. Este proyecto consiste en convertir un automóvil Hot Wheels en un vehículo controlado de manera inalámbrica mediante Bluetooth, integrando un ATtiny85 como cerebro principal del sistema y un módulo Bluetooth para la comunicación.</p>
+                        <p class="fs-6 mb-4">El objetivo es construir un prototipo funcional que permita controlar el movimiento del vehículo utilizando una aplicación en un smartphone o cualquier dispositivo compatible con Bluetooth. Este proyecto no solo combina conceptos de programación, electrónica y comunicación inalámbrica, sino que también demuestra cómo es posible reutilizar objetos cotidianos para crear sistemas electrónicos modernos y versátiles.</p>
+                        <p class="fs-6 mb-4">MIT App Inventor es una plataforma en línea gratuita y accesible que permite a usuarios de todos los niveles de experiencia diseñar y programar aplicaciones móviles de manera visual e intuitiva. Desarrollada por el Massachusetts Institute of Technology (MIT), la herramienta utiliza un enfoque basado en bloques, similar a un rompecabezas, para construir la lógica de las aplicaciones, eliminando la necesidad de conocimientos avanzados en programación tradicional.</p>
 
 
                         
@@ -103,88 +102,99 @@
                         <p class="fs-6 mb-4">Jumpers</p>
                         <p class="fs-6 mb-4">Boton de 4 pines</p>
                         <p class="fs-6 mb-4">display OLED</p>
+                        <p class="fs-6 mb-4">puente H</p>
+                        <p class="fs-6 mb-4">motor de 2cm</p>
+                        <p class="fs-6 mb-4">Hotwheels de tu agrado</p>
+                        <p class="fs-6 mb-4">Bateria compacta recargable</p>
+                        
 
                      
                         
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                        <p class="fs-6 mb-4">En esta práctica, se implementó un display OLED con el microcontrolador ATtiny85 para mostrar información básica, como texto y gráficos simples. El ATtiny85, a pesar de su tamaño compacto y recursos limitados, es capaz de comunicarse con displays OLED mediante los protocolos I2C o SPI, siendo I2C la opción preferida para la mayoría de los proyectos debido a su simplicidad en la conexión (requiere solo dos pines: SDA y SCL).</p>
-                        <p class="fs-6 mb-4">Conexión del Display OLED al ATtiny85:
+                        <p class="fs-6 mb-4">Se diseñó un sistema compacto que incluyera:
+                            ATtiny85: Microcontrolador para procesar las señales recibidas por Bluetooth y controlar los motores del vehículo.
+                            HC-05 (o HC-06): Módulo Bluetooth para la comunicación entre el vehículo y el dispositivo móvil.
+                            Motores DC: Para el movimiento de las ruedas.
+                            Driver de motor L293D o similar: Para controlar la dirección y velocidad de los motores.
+                            Baterías recargables o una pila compacta: Para alimentar el circuito y los motores.</p>
+                        <p class="fs-6 mb-4">Conexión del ATtiny85: Se programó el microcontrolador con un Arduino Uno como ISP, configurándolo para recibir comandos desde el módulo Bluetooth y controlar el driver de motor.
+                            Módulo Bluetooth:
+                            Se conectaron los pines TX y RX del HC-05 a los pines PB0 y PB1 del ATtiny85 para la comunicación serie.</p>
+                        <p class="fs-6 mb-4">Desarrollo de la aplicación móvil con MIT App Inventor:
 
-                            Se utilizó un display OLED basado en el controlador SSD1306, que es común en proyectos electrónicos debido a su compatibilidad con I2C.
-                            Los pines SDA y SCL del display se conectaron a los pines PB0 y PB2 del ATtiny85, respectivamente, utilizando cables jumper para asegurar una conexión estable.
-                            La alimentación del display se realizó a través de los pines VCC (5V) y GND, alimentados desde el ATtiny85.</p>
-                        <p class="fs-6 mb-4">Optimización y Gestión de Recursos:
+                            Se creó una aplicación con botones básicos para las funciones de avanzar, retroceder, girar izquierda, girar derecha, y un control deslizante para ajustar la velocidad del vehículo.
+                            La funcionalidad de conexión Bluetooth se implementó utilizando el componente "BluetoothClient" de App Inventor, que permitió el emparejamiento con el módulo HC-05 del automóvil.
+                            Cada botón fue configurado para enviar comandos específicos, como adelante, atrás,izquierda y derecha, al microcontrolador.</p>
+                        <p class="fs-6 mb-4">Integración con el ATtiny85 y el circuito del vehículo:
 
-                            Debido a las limitaciones de memoria del ATtiny85 (8 KB de memoria flash y 512 bytes de RAM), se optimizó el uso de la memoria cargando solo las funciones necesarias y evitando recursos gráficos complejos.
-                            Se implementaron funciones simples para refrescar el contenido del display solo cuando fuera necesario, evitando así un uso excesivo de recursos.</p>
-                        <p class="fs-6 mb-4"></p>
+                            El ATtiny85 recibió los comandos a través del módulo HC-05 y procesó las señales para accionar los motores mediante el driver.
+                            Los valores de velocidad enviados por el control deslizante fueron convertidos en señales PWM para ajustar la potencia de los motores.
+                            </p>
                         <p class="fs-6 mb-4"></p>
                         <p class="fs-6 mb-4"></p>
 
 
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
-                            <p class="fs-6 mb-4">Las simulaciones recreadas son las siguientes:</p>
                             <p class="fs-6 mb-4"></p>
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/sum.jpg" alt="..." /></figure>
+                            <p class="fs-6 mb-4"></p>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/dia.jpg" alt="..." /></figure>
+                           
                             
 
 
                             <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
-                            <p class="fs-6 mb-4">El diseño del circuito se centró en la conexión eficiente entre el ATtiny85 y un display OLED de tipo SSD1306, utilizando el protocolo de comunicación I2C. A continuación se detallan los componentes y conexiones necesarias para este proyecto:</p>
-                            <p class="fs-6 mb-4">Conexiones del Display OLED (SSD1306) al ATtiny85:
+                            <p class="fs-6 mb-4">Diseño físico:
+                                Los componentes electrónicos (ATtiny85, HC-05, driver de motor y batería) se montaron dentro del chasis del automóvil Hot Wheels, utilizando cinta adhesiva y pegamento para asegurar su posición.
+                                Se optimizó el espacio para mantener la estética del vehículo mientras se garantizaba la funcionalidad de las ruedas y motores.</p>
+                            <p class="fs-6 mb-4">Aplicación móvil:
 
-                                VCC (Display OLED) → VCC (ATtiny85): Ambos se conectan a la línea de 5V para alimentar el display.
-                                GND (Display OLED) → GND (ATtiny85): Conexión común a tierra.
-                                SDA (Display OLED) → PB0 (ATtiny85): Este pin se usa para la comunicación de datos (Data Line) en el protocolo I2C.
-                                SCL (Display OLED) → PB2 (ATtiny85): Este pin se usa para la señal de reloj (Clock Line) en I2C.</p>
-                            <p class="fs-6 mb-4">Conexión de alimentación del ATtiny85:
+                                Diseñada con MIT App Inventor, la aplicación envía comandos específicos (como "adelante", "atrás", "izquierda", "derecha") al HC-05 para controlar las acciones del vehículo.
+                                Un control deslizante permite enviar valores numéricos al ATtiny85 para ajustar la velocidad de los motores mediante PWM.</p>
+                            <p class="fs-6 mb-4">Diseño del circuito eléctrico:
+                                Alimentación:
+                                
+                                Las baterías proporcionan una fuente de 5V para el ATtiny85, el módulo Bluetooth y el driver de motor.</p>
+                            <p class="fs-6 mb-4">Conexiones del módulo Bluetooth HC-05:
 
-                                VCC (ATtiny85) → 5V (Arduino Uno ISP o fuente de alimentación externa).
-                                GND (ATtiny85) → GND (Arduino Uno ISP o fuente de alimentación externa).</p>
-                            <p class="fs-6 mb-4">Programación del ATtiny85:
-
-                                El ATtiny85 se conecta al Arduino Uno, que se utiliza como programador ISP. Los pines de comunicación para la programación son:
-                                MOSI (PB0) → Pin 11 del Arduino Uno
-                                MISO (PB1) → Pin 12 del Arduino Uno
-                                SCK (PB2) → Pin 13 del Arduino Uno
-                                RESET (PB5) → Pin 10 del Arduino Uno</p>
+                                VCC → Línea de 5V de la batería.
+                                GND → Línea de tierra común del circuito.
+                                TX → PB0 (pin 5) del ATtiny85 para la recepción de datos.
+                                RX → PB1 (pin 6) del ATtiny85 para el envío de datos.</p>
                             <p class="fs-6 mb-4"></p>
                             <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p>
+                            
                                
 
                             <p id="construccion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
                             <p class="fs-6 mb-4">1. Reunir los materiales</p>
-                            <p class="fs-6 mb-4">2. Conexión del Display OLED:
-
-                                El display OLED (basado en el controlador SSD1306) se conectó al ATtiny85 utilizando el protocolo I2C.
-                                VCC del display a VCC del ATtiny85 (5V).
-                                GND del display a GND del ATtiny85.
-                                SDA del display a PB0 (pin 5) del ATtiny85 para la línea de datos I2C.
-                                SCL del display a PB2 (pin 7) del ATtiny85 para la línea de reloj I2C.</p>
+                            <p class="fs-6 mb-4">Probar en una protoboard que todo funcione como es requerido (que los motores funcionen, que el bluetooth se conecte al celular, que la aplicacion de telefono de las instrucciones para poder moverl los motores, etc.</p>
+                            <p class="fs-6 mb-4">Posteriormente debe hacerse una PCB para pocer montar todo de forma optima para liberar espacio y que quede de una forma más estetica y segura para el proyecto.</p>
+                            <p class="fs-6 mb-4"></p>
                            
                             
 
                         <p id="resultados">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
                         <p class="fs-6 mb-4">Los resultados obtenidos se muestran a continuación</p>
-                        <p class="fs-6 mb-4"></p>
-                        <p class="fs-6 mb-4"></p>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vad.mp4" type="video/mp4">
-                        </video></p></figure>
+                        <p class="fs-6 mb-4">Lamentablemente debido a tiempos y contratiempos no se pudo consolidar el proyecto acertivamente, ya que el motor se quemo y no pude conseguir otro en el tiempo restante ´para entregar 
+                                             el proyecto, la pcb no fue funcional ya que no fue hecha aptamente ni con los materiales que eran necesarios
+                        </p>
+                        <p class="fs-6 mb-4">Lo unico que se pudo crear satisfactoriamente fue la App para controlar el carro, la cual es la siguiente:</p>
+                        <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/MIT.jpg" alt="..." /></figure>
+                        <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/app.jpg" alt="..." /></figure>
+                        
                       
 
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">El uso de un display OLED con el microcontrolador ATtiny85 demostró ser una solución efectiva para aplicaciones de visualización en proyectos electrónicos compactos. A pesar de las limitaciones de memoria y recursos del ATtiny85, fue posible integrar exitosamente un display OLED utilizando el protocolo I2C, que permitió una comunicación eficiente con el microcontrolador. La implementación de un botón como entrada digital también permitió interactuar con la pantalla, mostrando cómo el ATtiny85 puede manejar entradas y salidas en sistemas de bajo consumo.</p>
-                        <p class="fs-6 mb-4">En resumen, este proyecto no solo evidenció la viabilidad del ATtiny85 para manejar displays OLED, sino también su flexibilidad en aplicaciones compactas y de bajo consumo, lo que abre la puerta a futuras aplicaciones en dispositivos portátiles y sistemas embebidos.
-
-                        </p>
+                        <p class="fs-6 mb-4">Un proyecto tan ambicioso como este debe de ser llevado de una manera amplia para poder obtener los resultados que se buscan, debido a la carga de proyectos no pude concretar este, aunado a las limitaciones debido a mis dispositivos. Lo unico que me puedo llevar es la experiencia de trabajar con diversos procesadores y programadores, el aprender a crear y usar. apps para controlar via bluetooth y como llevar mis tiempos de forma optima</p>
                       
 
                         <p id="referencias">
