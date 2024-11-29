@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Arduino cómo ISP</h1>
+                        <h1 class="fw-bolder mb-1">ATtiny85 Inputs</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img-fluid rounded-circle" width="50px" src="assets/Carlos.jpg" alt="..." />
@@ -61,11 +61,11 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Octubre 24, 2024</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Noviembre 24, 2024</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >Arduino</a>
                         <a class="badge bg-primary text-decoration-none link-light" >Electrónica</a>
-                        <a class="badge bg-primary text-decoration-none link-light" >Attiny</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >ATtiny85</a>
 
                     </header>
                 </div>
@@ -79,18 +79,18 @@
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">El ATtiny es una familia de microcontroladores desarrollada por Atmel (ahora parte de Microchip Technology) que se caracteriza por su pequeño tamaño, bajo costo y consumo reducido de energía. Forma parte de la arquitectura AVR, al igual que otros microcontroladores de Atmel, pero está diseñado específicamente para aplicaciones donde el espacio es limitado y no se necesitan muchas entradas/salidas o características avanzadas. </p>
-                        <p class="fs-6 mb-4">Proyectos DIY y sistemas embebidos que requieren microcontroladores pequeños y eficientes.
-                            Aplicaciones portátiles, dispositivos wearables, pequeños robots y sistemas de automatización simples.
-                            A pesar de ser limitados en comparación con microcontroladores más grandes, los ATtiny son una excelente opción para proyectos sencillos o donde el bajo consumo y tamaño son prioritarios.</p>
+                        <p class="fs-6 mb-4">El ATtiny85 es un microcontrolador de 8 bits con pines versátiles que pueden configurarse como entradas o salidas digitales. En el caso de las entradas digitales, el ATtiny85 puede leer el estado de un pin para detectar señales de dispositivos externos, como botones, sensores o interruptores. Los pines utilizados como entradas pueden configurarse en tres modos:</p>
+                        <p class="fs-6 mb-4">Entrada Digital Normal: Permite leer señales de bajo (LOW) o alto (HIGH) dependiendo del estado del dispositivo conectado. Es necesario usar resistencias pull-up o pull-down externas para evitar estados flotantes.</p>
+                        <p class="fs-6 mb-4">Entrada Digital con Resistencia Pull-Up Interna: El ATtiny85 permite habilitar una resistencia pull-up interna mediante software, útil para simplificar circuitos al no requerir resistencias externas. Esto se realiza con el comando pinMode(pin, INPUT_PULLUP) en el entorno de Arduino.</p>
+                        <p class="fs-6 mb-4">Entrada Analógica (ADC): Aunque no es específicamente digital, algunos pines del ATtiny85 pueden configurarse como entradas analógicas para leer señales continuas, convirtiéndolas a valores digitales mediante un ADC interno de 10 bits.</p>
+                        <p class="fs-6 mb-4">El microcontrolador puede manejar hasta 5 entradas digitales en los pines PB0 a PB4, dependiendo de cómo se configure. Esto lo hace adecuado para proyectos compactos que requieren interacciones básicas con dispositivos externos.</p>
                         
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">En el desarrollo de sistemas embebidos, la elección del microcontrolador adecuado es fundamental para optimizar el espacio, el consumo de energía y los recursos disponibles. El ATtiny85, un microcontrolador compacto y eficiente de 8 bits, es una opción popular para proyectos pequeños donde se requiere un hardware reducido. Sin embargo, debido a su tamaño, el ATtiny85 no incluye una interfaz USB directa para su programación. Para solventar esta limitación, se puede utilizar un Arduino Uno como programador In-System (ISP), permitiendo cargar código directamente al ATtiny85.</p>
-                        <p class="fs-6 mb-4">El uso del Arduino Uno como ISP es una técnica ampliamente utilizada para programar microcontroladores pequeños como el ATtiny85 sin la necesidad de hardware especializado. Esta práctica no solo simplifica el proceso de programación, sino que también permite integrar el ATtiny85 en aplicaciones que requieren un menor consumo energético y espacio reducido, sin sacrificar las funcionalidades básicas de control.</p>
-                        <p class="fs-6 mb-4">En este reporte se describirá el proceso de configuración de un Arduino Uno como ISP y los pasos necesarios para programar un ATtiny85, abordando tanto la teoría detrás de la programación ISP como la aplicación práctica de este método en proyectos reales.</p>
+                        <p class="fs-6 mb-4">El ATtiny85 es un microcontrolador de 8 bits diseñado para aplicaciones compactas y de bajo consumo, que ofrece una gran versatilidad en la configuración de sus pines como entradas o salidas. En particular, sus entradas digitales permiten la interacción con diversos dispositivos externos, como botones, sensores y otros componentes que generan señales discretas de bajo (LOW) o alto (HIGH). Además, el ATtiny85 incluye la funcionalidad de activar resistencias pull-up internas, simplificando el diseño del circuito al reducir la necesidad de componentes externos.</p> 
+                        <p class="fs-6 mb-4">Este microcontrolador también admite el uso de entradas analógicas en ciertos pines, lo que amplía su rango de aplicaciones en proyectos donde se necesite leer señales variables, como las provenientes de sensores. En este reporte, se profundiza en la configuración y uso de entradas digitales, destacando su implementación en proyectos básicos, y se analizan las ventajas prácticas que ofrece en términos de simplicidad y funcionalidad.</p>
                         <p class="fs-6 mb-4"></p>
-
+                        
 
                         
                         
@@ -100,88 +100,90 @@
                         <p class="fs-6 mb-4">ATtiny85</p>
                         <p class="fs-6 mb-4">Protoboard</p>
                         <p class="fs-6 mb-4">Jumpers</p>
+                        <p class="fs-6 mb-4">Potenciometro</p>
+                        <p class="fs-6 mb-4">LEDs</p>
+                        <p class="fs-6 mb-4">Botones</p>
+
                      
                         
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                        <p class="fs-6 mb-4">Preparación del Arduino Uno como ISP
-                            El primer paso es configurar el Arduino Uno para que funcione como un programador ISP (In-System Programmer). Esto se hace cargando el ejemplo "ArduinoISP" desde el software Arduino IDE. El procedimiento es el siguiente:</p>
-                        <p class="fs-6 mb-4">1. Abrir Arduino IDE: Desde el menú, ir a Archivo > Ejemplos > 11.ArduinoISP > ArduinoISP. </p> 
-                        <p class="fs-6 mb-4">2. Seleccionar la placa y puerto del Arduino Uno: Ir a Herramientas > Placa y seleccionar Arduino Uno. Luego, en Puerto, elegir el puerto al que está conectado el Arduino. </p>
-                        <p class="fs-6 mb-4">3. Cargar el código: Presionar el botón "Cargar" para transferir el código de ArduinoISP al Arduino Uno. Esto lo convierte en un programador. </p>
-                        <p class="fs-6 mb-4"> Conexión del Arduino Uno al ATtiny85
-                            Una vez que el Arduino está preparado como programador ISP, es necesario realizar las conexiones entre el Arduino y el ATtiny85. Las conexiones deben ser precisas, utilizando los pines adecuados de cada dispositivo. Las conexiones son las siguientes:</p>
-                        <p class="fs-6 mb-4">Pin 10 (Arduino) → Pin 1 (Reset, ATtiny85)
-                            Pin 11 (Arduino) → Pin 5 (MOSI, ATtiny85)
-                            Pin 12 (Arduino) → Pin 6 (MISO, ATtiny85)
-                            Pin 13 (Arduino) → Pin 7 (SCK, ATtiny85)
-                            5V (Arduino) → Pin 8 (VCC, ATtiny85)
-                            GND (Arduino) → Pin 4 (GND, ATtiny85)</p>
-                        <p class="fs-6 mb-4">  Instalación del soporte para ATtiny85 en Arduino IDE
-                            El ATtiny85 no está incluido por defecto en las placas soportadas por Arduino IDE, por lo que se deben seguir los siguientes pasos para agregarlo:</p>  
-                        <p class="fs-6 mb-4">1. Abrir Arduino IDE e ir a Archivo > Preferencias. </p> 
-                        <p class="fs-6 mb-4">2. Luego, ir a Herramientas > Placa > Gestor de tarjetas y buscar "attiny". Instalar el soporte para el ATtiny.</p>
-                        <p class="fs-6 mb-4">Configuración de parámetros de programación
-                            Con las conexiones y el soporte para ATtiny85 instalados, es necesario configurar los parámetros correctos en el Arduino IDE:
-                            
-                            En Herramientas > Placa, seleccionar ATtiny25/45/85.
-                            En Procesador, seleccionar ATtiny85.
-                            En Frecuencia, seleccionar la frecuencia del reloj deseada, por ejemplo, 8 MHz (internal).
-                            En Programador, seleccionar Arduino as ISP.</p>  
-                        <p class="fs-6 mb-4">Quemar el bootloader (opcional)
-                            Para asegurarse de que el ATtiny85 esté correctamente configurado para funcionar con la frecuencia interna seleccionada, es recomendable "quemar" el bootloader: </p>
-                        <p class="fs-6 mb-4">1. En Herramientas, seleccionar la opción Quemar bootloader.</p>
-                        <p class="fs-6 mb-4">2. Este proceso inicializa el microcontrolador para que funcione con la frecuencia seleccionada y se asegura de que esté listo para la programación.</p>
-                        <p class="fs-6 mb-4"> Finalmente, el ATtiny85 está listo para recibir un programa. A modo de ejemplo, se puede cargar un código sencillo como el parpadeo de un LED:</p>
-                        <p class="fs-6 mb-4">void setup() {
-                            pinMode(0, OUTPUT); // Pin 0 (físico pin 5 en ATtiny85)
-                          }
-                          
-                          void loop() {
-                            digitalWrite(0, HIGH);
-                            delay(1000);
-                            digitalWrite(0, LOW);
-                            delay(1000);
-                          }</p>
-                        <p class="fs-6 mb-4">Escribir el código en el Arduino IDE.</p>
-                        <p class="fs-6 mb-4">Seleccionar Subir usando programador en el menú de Sketch para cargar el código en el ATtiny85.</p>
-                        <p class="fs-6 mb-4">Con estos pasos, el ATtiny85 queda programado utilizando un Arduino Uno como ISP. Este método es práctico para integrar microcontroladores pequeños en proyectos sin necesidad de hardware adicional, permitiendo maximizar las ventajas de los sistemas embebidos compactos.</p>
+                        <p class="fs-6 mb-4">En esta práctica se exploró el uso de entradas digitales y analógicas del microcontrolador ATtiny85 para interactuar con diversos componentes electrónicos. El circuito incluyó botones pulsadores y potenciómetros como entradas, y LEDs como salidas visuales. Los botones se conectaron a pines digitales del ATtiny85 configurados como entradas, utilizando resistencias pull-down de 10 kΩ para garantizar estados estables en reposo.</p>
+                        <p class="fs-6 mb-4">Por otro lado, los potenciómetros se conectaron a pines configurados como entradas analógicas, permitiendo leer valores de tensión variables mediante el convertidor ADC interno del microcontrolador. Este valor se procesó en el programa para generar respuestas específicas, como el control del brillo de un LED mediante la función analogWrite(). </p> 
+                        <p class="fs-6 mb-4">La programación se realizó utilizando el entorno Arduino, donde se configuraron los pines en modos digitales (INPUT) y analógicos, y se emplearon funciones como digitalRead(), analogRead() y digitalWrite() para procesar las señales. Los LEDs, conectados a pines de salida a través de resistencias limitadoras de corriente de 220 Ω, respondieron a las entradas, encendiéndose o ajustando su intensidad según la lógica programada. </p> 
+                        <p class="fs-6 mb-4">Este diseño demostró la capacidad del ATtiny85 para manejar múltiples tipos de entradas de manera eficiente, destacando su versatilidad en aplicaciones prácticas como el control básico de dispositivos electrónicos. </p> 
+                        <p class="fs-6 mb-4"> </p> 
+                        <p class="fs-6 mb-4"> </p> 
+                        <p class="fs-6 mb-4"> </p> 
+                       
 
 
                             <p id="simulacion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Simulación</h1>
                             <p class="fs-6 mb-4">Las simulaciones recreadas son las siguientes:</p>
                             <p class="fs-6 mb-4"></p>
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/simu1nue.jpg" alt="..." /></figure>
-                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/simu1nue.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/Som.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/som2.jpg" alt="..." /></figure>
+                            <figure class="mb-4" align="center"><img class="img-fluid rounded"  width="600px" src="img/som3.jpg" alt="..." /></figure>
 
 
                             <p id="diseño">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Diseño</h1>
-                            <p class="fs-6 mb-4">El diseño de este experimento se centra en la configuración del hardware y la implementación del software necesarios para utilizar un Arduino Uno como ISP para programar un ATtiny85. Este proceso implica dos etapas principales: la disposición de los componentes electrónicos y las conexiones correctas entre ellos, y la configuración del entorno de software para que el microcontrolador ATtiny85 pueda ser programado correctamente.</p>
+                            <p class="fs-6 mb-4">El diseño del circuito se enfocó en integrar entradas digitales (botones), entradas analógicas (potenciómetros) y salidas digitales (LEDs) con el microcontrolador ATtiny85. Todos los componentes fueron organizados en una protoboard, optimizando el espacio y asegurando conexiones estables mediante el uso de resistencias y cables jumper.                            </p>
+                            <p class="fs-6 mb-4">Entradas digitales (botones):
+
+                                Se conectaron botones pulsadores a los pines digitales PB3 y PB4 del ATtiny85.
+                                Cada botón incluyó una resistencia pull-down de 10 kΩ entre el pin digital y GND para evitar estados flotantes.
+                                Un terminal del botón se conectó al pin correspondiente del ATtiny85, y el otro terminal a 5V.
+                                </p>
+                            <p class="fs-6 mb-4">Entradas analógicas (potenciómetros):
+
+                                Dos potenciómetros se conectaron a los pines analógicos PB2 y PB1 (también configurables como digitales).
+                                Los terminales del potenciómetro se conectaron a 5V, GND y el pin de entrada analógica correspondiente.
+                                Esto permitió generar valores de tensión variables en un rango de 0 a 5V, procesados por el ADC interno del ATtiny85.</p>
+                            <p class="fs-6 mb-4">Salidas digitales (LEDs):
+
+                                Se utilizaron dos LEDs como indicadores visuales, conectados a los pines PB0 y PB5 del ATtiny85.
+                                Cada LED incluyó una resistencia limitadora de corriente de 220 Ω en serie entre el ánodo y el pin del microcontrolador.
+                                Los cátodos de los LEDs fueron conectados a GND.</p>
+                            <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p>
+                            <p class="fs-6 mb-4"></p>
                                
 
                             <p id="construccion">
                             <h1 class="fw-bolder2 mb-4 mt-5 fs-5">Construcción</h1>
-                            <p class="fs-6 mb-4">1. Reunir los materiales</p>
-                            <p class="fs-6 mb-4">2. Preparar el Arduino Uno 
-                                Conecta el Arduino Uno a tu computadora mediante el cable USB.
-                                Abre Arduino IDE en tu computadora.
-                                Ve a Archivo > Ejemplos > 11.ArduinoISP > ArduinoISP.
-                                Carga el sketch "ArduinoISP" en el Arduino Uno seleccionando la placa y el puerto correspondientes en Herramientas > Placa > Arduino Uno y Herramientas > Puerto.</p>
-                            <p class="fs-6 mb-4">3. Hacer las conexiones en la protoboard</p>
-                            <p class="fs-6 mb-4">Ahora, realiza las conexiones entre el Arduino Uno y el ATtiny85 en la protoboard:
-                                 Inserta el ATtiny85 en la protoboard, cuidando que cada pin esté en una fila separada.</p>
-                            <p class="fs-6 mb-4">5. Configurar Arduino IDE para ATtiny85</p>
-                            <p class="fs-6 mb-4">6. Configurar parámetros del ATtiny85
-                                En el menú Herramientas > Placa, selecciona ATtiny25/45/85.
-                                En Procesador, selecciona ATtiny85.
-                                En Frecuencia, selecciona 8 MHz (internal) o la frecuencia que vayas a utilizar.
-                                En Programador, selecciona Arduino as ISP.</p>
-                            <p class="fs-6 mb-4">7. Ensamblar en la protoboard.</p>
-                            <p class="fs-6 mb-4"> Usar la simulacion de referencia para ensamblar cada componente sobre la protoboard.</p>
-                 
-                            
+                            <p class="fs-6 mb-4">Preparación de la protoboard y el ATtiny85:
+
+                                Se colocó el ATtiny85 en la protoboard, asegurando que sus pines estuvieran accesibles para las conexiones.
+                                Los pines VCC (pin 8) y GND (pin 4) del ATtiny85 se conectaron a las líneas de alimentación de la protoboard, con un cable desde el Arduino Uno para suministrar 5V y GND.</p>
+                            <p class="fs-6 mb-4">Conexión de los botones:
+
+                                Se conectaron dos botones pulsadores:
+                                Un terminal de cada botón a 5V.
+                                El otro terminal de cada botón a los pines PB3 y PB4 del ATtiny85, respectivamente.
+                                Se añadieron resistencias pull-down de 10 kΩ entre cada pin digital y GND para evitar estados flotantes.</p>
+                            <p class="fs-6 mb-4">Conexión de los potenciómetros:
+
+                                Se instalaron dos potenciómetros para las entradas analógicas:
+                                Los terminales extremos de cada potenciómetro se conectaron a las líneas de 5V y GND de la protoboard.
+                                Los terminales centrales (wiper) se conectaron a los pines PB2 y PB1 del ATtiny85.
+                                </p>
+                            <p class="fs-6 mb-4">Conexión de los LEDs:
+
+                                Se añadieron dos LEDs como salidas digitales:
+                                El ánodo de cada LED se conectó a los pines PB0 y PB5 del ATtiny85, respectivamente, a través de resistencias limitadoras de 220 Ω.
+                                Los cátodos de los LEDs se conectaron a GND.</p>
+                            <p class="fs-6 mb-4">Conexión del ATtiny85 al Arduino Uno (ISP):
+
+                                Para la programación, los pines del ATtiny85 se conectaron al Arduino Uno de la siguiente manera:
+                                RESET (pin 1) → Pin 10 del Arduino Uno
+                                MOSI (pin 5) → Pin 11 del Arduino Uno
+                                MISO (pin 6) → Pin 12 del Arduino Uno
+                                SCK (pin 7) → Pin 13 del Arduino Uno
+                                Un capacitor de 10 µF se colocó entre RESET y GND en el Arduino Uno para evitar reinicios durante la programación.</p>
+                            <p class="fs-6 mb-4"></p>
                             
                             
 
@@ -191,39 +193,22 @@
                         <p class="fs-6 mb-4"></p>
                         <p class="fs-6 mb-4"></p>
                         <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid1.mp4" type="video/mp4">
+                            <source src="video/vud1.mp4" type="video/mp4">
                         </video></p></figure>
                         <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid2.mp4" type="video/mp4">
+                            <source src="video/vud2.mp4" type="video/mp4">
                         </video></p></figure>
                         <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid3.mp4" type="video/mp4">
+                            <source src="video/vud3.mp4" type="video/mp4">
                         </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid4.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid5.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid6.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid7.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid8.mp4" type="video/mp4">
-                        </video></p></figure>
-                        <figure class="mb-4" align="center"><video width="80%"  controls>
-                            <source src="video/vid9.mp4" type="video/mp4">
-                        </video></p></figure>
+                       
 
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Durante la práctica, se demostró cómo las conexiones correctas entre ambos dispositivos, junto con una configuración adecuada del entorno de programación en Arduino IDE, permiten cargar código en el ATtiny85 de manera sencilla. Este enfoque es especialmente útil en proyectos donde se necesita optimizar el espacio y el consumo de energía, ya que el ATtiny85 ofrece un tamaño reducido y características básicas suficientes para controlar elementos como LEDs, sensores o motores pequeños.</p>
-                        <p class="fs-6 mb-4">Siendo una herramienta valiosa para proyectos de sistemas embebidos y controladores simples, facilitando el desarrollo de soluciones compactas y energéticamente eficientes.</p>
-                      
+                        <p class="fs-6 mb-4">La práctica permitió comprender y aplicar el uso de entradas digitales y analógicas en el microcontrolador ATtiny85, destacando su versatilidad y eficiencia en proyectos compactos. Mediante la integración de botones y potenciómetros como entradas, y LEDs como salidas visuales, se demostró la capacidad del ATtiny85 para interactuar con diferentes dispositivos electrónicos y ejecutar tareas de control básicas.</p>
+                        <p class="fs-6 mb-4">El uso de resistencias pull-down y resistencias limitadoras de corriente fue fundamental para garantizar la estabilidad y protección del circuito, mientras que la implementación del ADC interno permitió ampliar las funcionalidades del sistema al procesar señales analógicas. Además, la experiencia de programar el ATtiny85 a través de un Arduino Uno como ISP fortaleció las habilidades prácticas en configuración y programación de microcontroladores.
+                                             En general, el ATtiny85 demostró ser una solución eficiente para aplicaciones donde el espacio y los recursos son limitados, haciendo de esta práctica un ejercicio útil para proyectos futuros en electrónica y control.</p>
 
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
